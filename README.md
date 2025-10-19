@@ -1,46 +1,125 @@
-# Getting Started with Create React App
+# Task Manager Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React 19 frontend application for managing tasks with command execution capabilities. Built with TypeScript, Ant Design, and a focus on usability and accessibility.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- ✅ **Task Management**: Create, read, update, and delete tasks
+- 🔍 **Search & Filter**: Search tasks by name with real-time filtering
+- ⚡ **Command Execution**: Execute tasks and view command outputs
+- 📊 **Execution History**: View detailed execution history with timestamps and outputs
+- 🎨 **Modern UI**: Clean, responsive design with Ant Design components
+- ♿ **Accessibility**: Keyboard navigation, ARIA labels, and screen reader support
+- 📱 **Responsive**: Works seamlessly on desktop, tablet, and mobile devices
 
-### `npm start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React 19** - Latest React with concurrent features
+- **TypeScript** - Type-safe development
+- **Ant Design** - Enterprise-class UI design language
+- **Axios** - HTTP client for API communication
+- **React Router** - Client-side routing (ready for future expansion)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v16 or higher)
+- npm or yarn
+- Backend API running on http://localhost:8080
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install dependencies:
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Start the development server:
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run eject`
+### Building for Production
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm run build
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This builds the app for production to the `build` folder.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## API Integration
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The frontend integrates with the following backend endpoints:
 
-## Learn More
+- `GET /tasks` - Get all tasks or task by ID
+- `PUT /tasks` - Create or update a task
+- `DELETE /tasks/{id}` - Delete a task
+- `GET /tasks/find?name={name}` - Find tasks by name
+- `PUT /tasks/{id}/execute` - Execute a task
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Component Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── components/
+│   ├── Layout.tsx              # Main application layout
+│   ├── TaskList.tsx            # Task listing with search and actions
+│   ├── TaskForm.tsx            # Task creation/editing form
+│   └── TaskExecutionModal.tsx  # Task execution history viewer
+├── services/
+│   └── api.ts                  # API service functions
+├── types/
+│   └── index.ts                # TypeScript type definitions
+└── App.tsx                     # Main application component
+```
+
+## Accessibility Features
+
+- **Keyboard Navigation**: Full keyboard support for all interactive elements
+- **Screen Reader Support**: Proper ARIA labels and semantic HTML
+- **Focus Management**: Clear focus indicators and logical tab order
+- **Color Contrast**: High contrast ratios for better readability
+- **Responsive Design**: Adapts to different screen sizes and orientations
+
+## UI/UX Features
+
+- **Modern Design**: Clean, professional interface with consistent spacing
+- **Loading States**: Visual feedback during API operations
+- **Error Handling**: User-friendly error messages and validation
+- **Search & Filter**: Real-time search with instant results
+- **Pagination**: Efficient handling of large task lists
+- **Modal Dialogs**: Non-intrusive forms and detailed views
+- **Tooltips**: Helpful hints for better user experience
+
+## Development
+
+### Available Scripts
+
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
+
+### Code Style
+
+The project follows TypeScript best practices and React patterns:
+
+- Functional components with hooks
+- TypeScript interfaces for type safety
+- Consistent naming conventions
+- Proper error handling
+- Accessibility-first development
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+This project is part of the Kaiburr task management system.
